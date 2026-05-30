@@ -1,35 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0a0a0a"/>
-      <stop offset="100%" stop-color="#15110b"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0E0D0B"/>
+      <stop offset="100%" stop-color="#0a0907"/>
     </linearGradient>
-    <radialGradient id="glow" cx="0.8" cy="0.2" r="0.7">
-      <stop offset="0%" stop-color="#b89968" stop-opacity="0.18"/>
-      <stop offset="100%" stop-color="#b89968" stop-opacity="0"/>
+    <radialGradient id="glow" cx="0.78" cy="0.18" r="0.6">
+      <stop offset="0%" stop-color="#C6A15B" stop-opacity="0.22"/>
+      <stop offset="60%" stop-color="#C6A15B" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#C6A15B" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#b89968" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#b89968" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="#b89968" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#C6A15B" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#C6A15B" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#C6A15B" stop-opacity="0"/>
     </linearGradient>
   </defs>
 
   <rect width="1200" height="630" fill="url(#bg)"/>
   <rect width="1200" height="630" fill="url(#glow)"/>
 
-  <!-- top brand mark -->
-  <circle cx="80" cy="80" r="7" fill="#b89968"/>
-  <text x="100" y="86" font-family="Inter, -apple-system, sans-serif" font-size="20" font-weight="600" fill="#f5f3ee" letter-spacing="-0.01em">RobimyTech</text>
+  <!-- brand mark -->
+  <circle cx="80" cy="80" r="6" fill="#C6A15B"/>
+  <text x="98" y="86" font-family="Instrument Serif, Georgia, serif" font-size="22" font-weight="400" fill="#F3EBDD" letter-spacing="-0.02em">RobimyTech</text>
 
-  <text x="80" y="240" font-family="Fraunces, Georgia, serif" font-size="92" font-weight="600" fill="#f5f3ee" letter-spacing="-0.04em">Zaufana sieć ludzi,</text>
-  <text x="80" y="340" font-family="Fraunces, Georgia, serif" font-size="92" font-weight="500" fill="#b89968" letter-spacing="-0.04em" font-style="italic">którzy dowożą tech.</text>
+  <text x="80" y="240" font-family="Instrument Serif, Georgia, serif" font-size="98" font-weight="400" fill="#F3EBDD" letter-spacing="-0.04em">Zaufana sieć ludzi,</text>
+  <text x="80" y="346" font-family="Instrument Serif, Georgia, serif" font-size="98" font-weight="400" fill="#C6A15B" letter-spacing="-0.04em" font-style="italic">którzy dowożą tech.</text>
 
-  <line x1="80" y1="395" x2="500" y2="395" stroke="url(#line)" stroke-width="1"/>
+  <line x1="80" y1="402" x2="520" y2="402" stroke="url(#line)" stroke-width="1"/>
 
-  <text x="80" y="450" font-family="Inter, -apple-system, sans-serif" font-size="30" font-weight="400" fill="#b8b4a8" letter-spacing="-0.005em">Mały krąg sprawdzonych wykonawców.</text>
-  <text x="80" y="492" font-family="Inter, -apple-system, sans-serif" font-size="30" font-weight="400" fill="#b8b4a8" letter-spacing="-0.005em">Duże zlecenia. Reputacja za każdą rekomendacją.</text>
+  <text x="80" y="458" font-family="Inter, -apple-system, sans-serif" font-size="28" font-weight="400" fill="#A9A096" letter-spacing="-0.005em">Mały krąg sprawdzonych wykonawców.</text>
+  <text x="80" y="498" font-family="Inter, -apple-system, sans-serif" font-size="28" font-weight="400" fill="#A9A096" letter-spacing="-0.005em">Duże zlecenia. Reputacja za każdą rekomendacją.</text>
 
-  <!-- bottom rules -->
-  <text x="80" y="580" font-family="Fraunces, Georgia, serif" font-size="22" font-style="italic" fill="#6b6760">0 listeners · Chatham House Rule · robimytech.pl</text>
+  <text x="80" y="582" font-family="Instrument Serif, Georgia, serif" font-size="22" font-style="italic" fill="#6E665B">0 listeners &#183; Chatham House Rule &#183; robimytech.pl</text>
 </svg>
