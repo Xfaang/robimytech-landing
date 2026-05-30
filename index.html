@@ -3,9 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>RobimyTech — krąg kreatorów, tylko z polecenia</title>
-<meta name="description" content="Mała grupa kreatorów techu. Polecamy sobie pracę i ręczymy reputacją. Klient dostaje filtr, członek dostaje zlecenia tylko od osób, którym ufa.">
-<meta name="robots" content="noindex,nofollow">
+<title>RobimyTech &mdash; prywatna sieć poleceń technologicznych</title>
+<meta name="description" content="RobimyTech to zamknięta sieć sprawdzonych ludzi od technologii. Zlecenia, wykonawcy i rekomendacje oparte na reputacji, poufności i jakości delivery.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://www.robimytech.pl/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.robimytech.pl/">
+<meta property="og:title" content="RobimyTech &mdash; zaufana sieć ludzi, którzy dowożą tech">
+<meta property="og:description" content="Mały krąg sprawdzonych wykonawców. Duże zlecenia. Reputacja za każdą rekomendacją.">
+<meta property="og:image" content="https://www.robimytech.pl/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="RobimyTech &mdash; zaufana sieć ludzi, którzy dowożą tech">
+<meta name="twitter:description" content="Mały krąg sprawdzonych wykonawców. Duże zlecenia. Reputacja za każdą rekomendacją.">
+<meta name="twitter:image" content="https://www.robimytech.pl/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,11 +25,14 @@
   :root {
     --bg: #0a0a0a;
     --bg-soft: #111111;
+    --bg-card: #15110b;
     --ink: #f5f3ee;
     --ink-dim: #b8b4a8;
     --ink-mute: #6b6760;
     --line: #2a2722;
+    --line-strong: #3a3530;
     --accent: #b89968;
+    --accent-bright: #c9a87a;
     --accent-soft: rgba(184,153,104,0.10);
     --accent-line: rgba(184,153,104,0.35);
   }
@@ -31,29 +46,24 @@
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
-  .container { max-width: 920px; margin: 0 auto; padding: 0 28px; }
-  .container-narrow { max-width: 640px; margin: 0 auto; padding: 0 28px; }
+  a { color: inherit; }
+  .container { max-width: 980px; margin: 0 auto; padding: 0 28px; }
+  .container-narrow { max-width: 680px; margin: 0 auto; padding: 0 28px; }
 
   /* Nav */
   nav {
     padding: 28px 0;
     border-bottom: 1px solid var(--line);
   }
-  .nav-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; }
   .brand {
     font-family: 'Fraunces', serif;
     font-weight: 600;
     font-size: 18px;
     letter-spacing: -0.01em;
+    text-decoration: none;
   }
-  .brand-mark {
-    color: var(--accent);
-    margin-right: 2px;
-  }
+  .brand-mark { color: var(--accent); margin-right: 4px; }
   .nav-meta {
     font-size: 12px;
     color: var(--ink-mute);
@@ -62,7 +72,7 @@
   }
 
   /* Hero */
-  .hero { padding: 120px 0 100px; }
+  .hero { padding: 110px 0 90px; }
   .eyebrow {
     display: inline-block;
     font-size: 11px;
@@ -78,10 +88,10 @@
   h1 {
     font-family: 'Fraunces', serif;
     font-weight: 600;
-    font-size: clamp(48px, 9vw, 96px);
-    line-height: 0.98;
+    font-size: clamp(44px, 8.5vw, 92px);
+    line-height: 0.99;
     letter-spacing: -0.035em;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
   h1 em {
     font-style: italic;
@@ -94,7 +104,7 @@
     font-size: clamp(20px, 2.4vw, 26px);
     line-height: 1.45;
     color: var(--ink-dim);
-    max-width: 560px;
+    max-width: 620px;
     margin-bottom: 40px;
   }
   .cta-row {
@@ -114,29 +124,23 @@
     font-weight: 600;
     letter-spacing: 0.01em;
     transition: all 0.15s ease;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-family: inherit;
   }
-  .btn-primary {
-    background: var(--accent);
-    color: var(--bg);
-  }
-  .btn-primary:hover {
-    background: #c9a87a;
-    transform: translateY(-1px);
-  }
-  .btn-ghost {
-    color: var(--ink-dim);
-    border: 1px solid var(--line);
-  }
-  .btn-ghost:hover {
+  .btn-primary { background: var(--accent); color: var(--bg); }
+  .btn-primary:hover { background: var(--accent-bright); transform: translateY(-1px); }
+  .btn-secondary {
     color: var(--ink);
-    border-color: var(--ink-mute);
+    border-color: var(--accent-line);
+    background: var(--accent-soft);
   }
+  .btn-secondary:hover { border-color: var(--accent); background: rgba(184,153,104,0.18); }
+  .btn-ghost { color: var(--ink-dim); border: 1px solid var(--line); }
+  .btn-ghost:hover { color: var(--ink); border-color: var(--ink-mute); }
 
-  /* Section base */
-  section.block {
-    padding: 80px 0;
-    border-top: 1px solid var(--line);
-  }
+  /* Section */
+  section.block { padding: 80px 0; border-top: 1px solid var(--line); }
   .section-label {
     font-size: 11px;
     letter-spacing: 0.18em;
@@ -152,56 +156,140 @@
     letter-spacing: -0.02em;
     margin-bottom: 24px;
   }
+  h2 em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 500;
+  }
 
-  /* Manifest */
-  .manifest p {
+  /* Zasada (was Manifest) */
+  .principle p {
     font-family: 'Fraunces', serif;
     font-size: clamp(22px, 2.6vw, 30px);
     line-height: 1.5;
     color: var(--ink);
     font-weight: 400;
   }
-  .manifest p + p { margin-top: 18px; color: var(--ink-dim); }
+  .principle p + p { margin-top: 18px; color: var(--ink-dim); }
 
-  /* How it works */
-  .steps {
+  /* Dla kogo / Nie jest */
+  .audience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-top: 32px;
+  }
+  .audience-col {
+    border-left: 2px solid var(--accent);
+    padding-left: 22px;
+  }
+  .audience-col.neg { border-left-color: var(--line-strong); }
+  .audience-head {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  .audience-list {
+    list-style: none;
+    color: var(--ink-dim);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .audience-list li { padding: 2px 0; }
+
+  /* Klient (separate block, premium) */
+  .client-box {
+    background: linear-gradient(135deg, rgba(184,153,104,0.06), rgba(184,153,104,0.02));
+    border: 1px solid var(--accent-line);
+    border-radius: 18px;
+    padding: 44px 40px;
+    margin-top: 32px;
+  }
+  .client-box h3 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(26px, 3.5vw, 34px);
+    font-weight: 500;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .client-box p {
+    color: var(--ink-dim);
+    font-size: 16px;
+    margin-bottom: 24px;
+    max-width: 560px;
+  }
+
+  /* Process steps (member + zlecenie) */
+  .process-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-top: 32px;
+  }
+  .process-col {
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 32px 28px;
+  }
+  .process-head {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 22px;
+    color: var(--ink);
+  }
+  .process-steps { list-style: none; counter-reset: step; }
+  .process-steps li {
+    counter-increment: step;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink-dim);
+    font-size: 15px;
+    line-height: 1.55;
+    position: relative;
+    padding-left: 40px;
+  }
+  .process-steps li:last-child { border-bottom: 0; }
+  .process-steps li::before {
+    content: counter(step, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 14px;
+    font-family: 'Fraunces', serif;
+    color: var(--accent);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  /* Standard RobimyTech (display) */
+  .standard {
     display: grid;
     grid-template-columns: 1fr;
     gap: 0;
     margin-top: 32px;
   }
-  .step {
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: 24px;
-    padding: 30px 0;
+  .standard-line {
+    padding: 22px 0;
     border-bottom: 1px solid var(--line);
-    align-items: start;
-  }
-  .step:last-child { border-bottom: 0; }
-  .step-num {
     font-family: 'Fraunces', serif;
-    font-size: 38px;
-    font-weight: 500;
-    color: var(--accent);
+    font-size: clamp(22px, 3vw, 28px);
+    line-height: 1.3;
     letter-spacing: -0.02em;
-    line-height: 1;
+    color: var(--ink);
   }
-  .step-head {
-    font-family: 'Fraunces', serif;
-    font-size: 22px;
-    font-weight: 500;
-    margin-bottom: 8px;
-    letter-spacing: -0.01em;
+  .standard-line:last-child { border-bottom: 0; }
+  .standard-line strong {
+    color: var(--accent);
+    font-weight: 600;
+    font-style: italic;
   }
-  .step-body {
-    color: var(--ink-dim);
-    font-size: 15px;
-    line-height: 1.6;
-    max-width: 540px;
-  }
+  .standard-line span { color: var(--ink-mute); padding: 0 8px; }
 
-  /* Rules */
+  /* Zasady (4 rule cards) */
   .rules-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -212,42 +300,84 @@
     border-left: 2px solid var(--accent);
     padding: 4px 0 4px 20px;
   }
-  .rule-head {
-    font-family: 'Fraunces', serif;
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 8px;
+  .rule-head { font-family: 'Fraunces', serif; font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+  .rule-body { color: var(--ink-dim); font-size: 14px; line-height: 1.55; }
+
+  /* Tag list (types of zleceń) */
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
   }
-  .rule-body {
+  .tag {
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,0.02);
     color: var(--ink-dim);
-    font-size: 14px;
-    line-height: 1.55;
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: 13px;
   }
 
-  /* Apply */
-  .apply-wrap {
+  /* FAQ */
+  .faq { margin-top: 24px; }
+  details {
+    border-top: 1px solid var(--line);
+    padding: 18px 0;
+  }
+  details:last-of-type { border-bottom: 1px solid var(--line); }
+  details summary {
+    cursor: pointer;
+    list-style: none;
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--ink);
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    letter-spacing: -0.01em;
+  }
+  details summary::-webkit-details-marker { display: none; }
+  details summary::after {
+    content: '+';
+    color: var(--accent);
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 22px;
+    transition: transform 0.2s ease;
+  }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p {
+    margin-top: 12px;
+    color: var(--ink-dim);
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 580px;
+  }
+
+  /* Form */
+  .form-wrap {
     background: var(--bg-soft);
     border: 1px solid var(--line);
     border-radius: 14px;
-    padding: 48px 40px;
-    margin-top: 32px;
+    padding: 40px 36px;
+    margin-top: 24px;
   }
-  .apply-wrap h3 {
+  .form-wrap h3 {
     font-family: 'Fraunces', serif;
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 500;
     margin-bottom: 12px;
     letter-spacing: -0.01em;
   }
-  .apply-wrap > p {
+  .form-wrap > p {
     color: var(--ink-dim);
     font-size: 15px;
-    margin-bottom: 28px;
-    max-width: 480px;
+    margin-bottom: 26px;
+    max-width: 540px;
   }
-  .form-row {
-    margin-bottom: 18px;
-  }
+  .form-row { margin-bottom: 18px; }
   .form-row label {
     display: block;
     font-size: 12px;
@@ -257,7 +387,8 @@
     margin-bottom: 8px;
   }
   .form-row input,
-  .form-row textarea {
+  .form-row textarea,
+  .form-row select {
     width: 100%;
     background: var(--bg);
     border: 1px solid var(--line);
@@ -268,20 +399,18 @@
     font-size: 15px;
     transition: border-color 0.15s ease;
   }
+  .form-row select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23b89968' d='M0 0l6 8 6-8z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+  }
   .form-row input:focus,
-  .form-row textarea:focus {
-    outline: none;
-    border-color: var(--accent);
-  }
-  .form-row textarea {
-    min-height: 110px;
-    resize: vertical;
-  }
-  .form-note {
-    font-size: 12px;
-    color: var(--ink-mute);
-    margin-top: 6px;
-  }
+  .form-row textarea:focus,
+  .form-row select:focus { outline: none; border-color: var(--accent); }
+  .form-row textarea { min-height: 110px; resize: vertical; }
+  .form-note { font-size: 12px; color: var(--ink-mute); margin-top: 6px; }
   .form-actions {
     margin-top: 24px;
     display: flex;
@@ -289,16 +418,26 @@
     align-items: center;
     flex-wrap: wrap;
   }
-  .submit-meta {
-    font-size: 12px;
-    color: var(--ink-mute);
+  .submit-meta { font-size: 12px; color: var(--ink-mute); }
+  .honey-field { display: none !important; }
+
+  /* Thanks banner */
+  .thanks {
+    background: var(--accent-soft);
+    border: 1px solid var(--accent);
+    color: var(--ink);
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-bottom: 32px;
+    font-size: 14px;
   }
+  .thanks strong { color: var(--accent); font-weight: 600; }
 
   /* Footer */
   footer {
     border-top: 1px solid var(--line);
     padding: 56px 0 48px;
-    margin-top: 80px;
+    margin-top: 60px;
   }
   .footer-inner {
     display: flex;
@@ -313,23 +452,15 @@
     font-size: 18px;
     color: var(--ink-dim);
   }
-  .footer-rule strong {
-    color: var(--ink);
-    font-weight: 500;
-    font-style: normal;
-  }
-  .footer-mark {
-    font-size: 12px;
-    letter-spacing: 0.06em;
-    color: var(--ink-mute);
-  }
+  .footer-rule strong { color: var(--ink); font-weight: 500; font-style: normal; }
+  .footer-mark { font-size: 12px; letter-spacing: 0.06em; color: var(--ink-mute); }
 
-  @media (max-width: 640px) {
-    .hero { padding: 80px 0 60px; }
-    section.block { padding: 60px 0; }
-    .apply-wrap { padding: 32px 24px; }
-    .step { grid-template-columns: 56px 1fr; gap: 18px; padding: 24px 0; }
-    .step-num { font-size: 30px; }
+  @media (max-width: 720px) {
+    .hero { padding: 70px 0 50px; }
+    section.block { padding: 56px 0; }
+    .form-wrap, .client-box { padding: 30px 22px; }
+    .audience-grid, .process-grid { grid-template-columns: 1fr; gap: 22px; }
+    .standard-line { font-size: 20px; padding: 16px 0; }
   }
 </style>
 </head>
@@ -337,64 +468,58 @@
 
 <nav>
   <div class="container nav-inner">
-    <div class="brand"><span class="brand-mark">&#9679;</span> RobimyTech</div>
-    <div class="nav-meta">Krąg · Members only</div>
+    <a class="brand" href="/"><span class="brand-mark">&#9679;</span>RobimyTech</a>
+    <div class="nav-meta">Krąg &middot; tylko z polecenia</div>
   </div>
 </nav>
 
 <header class="hero">
   <div class="container">
     <span class="eyebrow">Tylko z polecenia</span>
-    <h1>Krąg kreatorów<br>kt&oacute;rzy <em>robią tech</em>.</h1>
-    <p class="lede">Mała grupa, duże zlecenia, twarde standardy. Polecamy sobie pracę i ręczymy reputacją.</p>
+    <h1>Prywatna sieć<br>poleceń <em>tech</em>.</h1>
+    <p class="lede">Mała grupa sprawdzonych ludzi. Duże zlecenia. Reputacja za każdą rekomendacją.</p>
     <div class="cta-row">
-      <a href="#apply" class="btn btn-primary">Zgłoś się &rarr;</a>
-      <a href="#how" class="btn btn-ghost">Jak to działa</a>
+      <a href="#zgloszenie" class="btn btn-primary">Mam polecenie &rarr; zgłoś się</a>
+      <a href="#zlecenie" class="btn btn-secondary">Szukam wykonawcy &rarr; opisz projekt</a>
     </div>
   </div>
 </header>
 
 <section class="block">
-  <div class="container-narrow manifest">
-    <div class="section-label">Manifest</div>
+  <div class="container-narrow principle">
+    <div class="section-label">Zasada działania</div>
     <h2>Klient dostaje filtr.<br>Członek dostaje zlecenia od osób, którym ufa.</h2>
-    <p>Nikt z nas nie poleci kogoś, kto dostarcza śmieci. Stawiamy reputację za każdym poleceniem.</p>
-    <p>To nie jest community do networkingu. To jest filtr na klientów i filtr na wykonawców.</p>
+    <p>Nikt z nas nie poleca pracy, za którą nie chce wziąć reputacyjnej odpowiedzialności.</p>
+    <p>To nie networking. To infrastruktura zaufania między ludźmi, którzy realnie dowożą.</p>
   </div>
 </section>
 
-<section class="block" id="how">
+<section class="block">
   <div class="container">
-    <div class="section-label">Jak to działa</div>
-    <h2>Cztery kroki, jedna zasada: <em style="font-family: 'Fraunces', serif; font-style: italic; color: var(--accent);">zawsze ręczysz</em>.</h2>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">01</div>
-        <div>
-          <div class="step-head">Zaproszenie</div>
-          <div class="step-body">Maksymalnie 50 osób w kręgu. Wchodzisz tylko jeśli ktoś z wewnątrz Cię poleci. Bez Apply Now, bez Join us, bez self-signup.</div>
-        </div>
+    <div class="section-label">Dla kogo to jest</div>
+    <h2>Dla ludzi, którzy realnie <em>dowożą tech</em>.</h2>
+    <div class="audience-grid">
+      <div class="audience-col">
+        <div class="audience-head">Jest dla</div>
+        <ul class="audience-list">
+          <li>Senior developerów</li>
+          <li>CTO i tech leadów</li>
+          <li>Product designerów</li>
+          <li>AI &amp; automation specialistów</li>
+          <li>DevOpsów &amp; cloud engineerów</li>
+          <li>Founderów technicznych</li>
+          <li>Osób, które biorą projekt od A do Z</li>
+        </ul>
       </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <div>
-          <div class="step-head">Vouching</div>
-          <div class="step-body">Potrzebujesz dwóch poręczycieli z kręgu. Każdy z nich stawia swoją reputację za to, że dostarczasz robotę.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <div>
-          <div class="step-head">Delivery</div>
-          <div class="step-body">Polecasz zlecenia. Bierzesz zlecenia. Płacisz za dobrą robotę. Każda transakcja przechodzi przez sieć vouchów, każdy widzi historię.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">04</div>
-        <div>
-          <div class="step-head">Exit</div>
-          <div class="step-body">Jedna potwierdzona skarga na dostarczanie śmieci, ujawnienie poufnej rozmowy albo oszustwo &mdash; wylatujesz. Bez głosowania, bez procesu sądowego.</div>
-        </div>
+      <div class="audience-col neg">
+        <div class="audience-head">Nie jest dla</div>
+        <ul class="audience-list">
+          <li>Szukających luźnego networkingu</li>
+          <li>Generalistów bez konkretnego dorobku</li>
+          <li>Początkujących bez sprawdzonej pracy</li>
+          <li>Sprzedawców szukających leadów</li>
+          <li>Agencji szukających podwykonawców</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -402,12 +527,76 @@
 
 <section class="block">
   <div class="container">
-    <div class="section-label">Zasady</div>
+    <div class="section-label">Szukasz wykonawcy?</div>
+    <h2>Dostajesz <em>rekomendację</em>, nie listę CV.</h2>
+    <div class="client-box">
+      <h3>Opisz potrzebę. Krąg wskaże osobę, która podpisze rekomendację reputacją.</h3>
+      <p>To nie agencja, nie marketplace. Każda osoba, którą polecimy, ma za sobą członka kręgu, który ręczy za to, co dowiezie.</p>
+      <a href="#zlecenie" class="btn btn-primary">Opisz zlecenie &rarr;</a>
+      <div class="tag-row">
+        <span class="tag">MVP / prototyp</span>
+        <span class="tag">audyt technologiczny</span>
+        <span class="tag">AI automation</span>
+        <span class="tag">integracje API</span>
+        <span class="tag">dev team rescue</span>
+        <span class="tag">CTO advisory</span>
+        <span class="tag">performance &amp; SEO</span>
+        <span class="tag">design system</span>
+        <span class="tag">cloud / DevOps</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <div class="section-label">Proces</div>
+    <h2>Dwa wejścia, jedna <em>zasada</em>: zawsze ręczysz.</h2>
+    <div class="process-grid">
+      <div class="process-col">
+        <div class="process-head">Jak dołącza członek</div>
+        <ul class="process-steps">
+          <li>Polecenie od osoby z kręgu.</li>
+          <li>Dwóch poręczycieli, którzy stawiają swoją reputację.</li>
+          <li>Jeden konkretny dowód jakości pracy.</li>
+          <li>Akceptacja lub brak odpowiedzi w 7 dni.</li>
+        </ul>
+      </div>
+      <div class="process-col">
+        <div class="process-head">Jak działa zlecenie</div>
+        <ul class="process-steps">
+          <li>Klient opisuje potrzebę.</li>
+          <li>Krąg wskazuje pasujące osoby.</li>
+          <li>Rekomendacja jest podpisana reputacją członka.</li>
+          <li>Po projekcie zostaje historia jakości.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <div class="section-label">Standard RobimyTech</div>
+    <h2>Krótki kodeks, długie konsekwencje.</h2>
+    <div class="standard">
+      <div class="standard-line"><strong>Dowożenie</strong> <span>&gt;</span> deklaracje.</div>
+      <div class="standard-line"><strong>Poufność</strong> <span>&gt;</span> autopromocja.</div>
+      <div class="standard-line"><strong>Reputacja</strong> <span>&gt;</span> leady.</div>
+      <div class="standard-line"><strong>Konkret</strong> <span>&gt;</span> networking.</div>
+      <div class="standard-line"><strong>Odpowiedzialność</strong> <span>&gt;</span> „znam kogoś&rdquo;.</div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <div class="section-label">Zasady kręgu</div>
     <h2>Krótko i twardo.</h2>
     <div class="rules-grid">
       <div class="rule">
         <div class="rule-head">0 listeners</div>
-        <div class="rule-body">Nikt z zewnątrz nie nagrywa, nie streamuje, nie zapisuje. Nasze rozmowy zostają w kręgu.</div>
+        <div class="rule-body">Nikt z zewnątrz nie nagrywa, nie streamuje, nie zapisuje. Rozmowy zostają w kręgu.</div>
       </div>
       <div class="rule">
         <div class="rule-head">Chatham House Rule</div>
@@ -415,49 +604,139 @@
       </div>
       <div class="rule">
         <div class="rule-head">Aktywność</div>
-        <div class="rule-body">Sześć miesięcy bez polecenia, wzięcia zlecenia albo wniesienia zasobu, wylatujesz na ławkę.</div>
+        <div class="rule-body">Krąg działa tylko gdy ludzie coś wnoszą: polecenia, zlecenia, wiedza, narzędzia. Brak aktywności przez 6 miesięcy oznacza przejście w tryb obserwatora.</div>
       </div>
       <div class="rule">
-        <div class="rule-head">Anonimowe skargi</div>
-        <div class="rule-body">Skargi rozpatruje rotacyjny komitet pięciu osób. Decyzja final.</div>
+        <div class="rule-head">Reputacyjna odpowiedzialność</div>
+        <div class="rule-body">Tracisz dostęp do kręgu, gdy zaufanie zostaje złamane. Decyzja jest szybka, poufna i oparta na potwierdzonych faktach.</div>
       </div>
+    </div>
+    <p style="margin-top: 22px; color: var(--ink-mute); font-size: 14px; max-width: 620px;">
+      Historia jakości jest widoczna w zakresie potrzebnym do ochrony reputacji kręgu, bez ujawniania poufnych danych klientów.
+    </p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container-narrow">
+    <div class="section-label">FAQ</div>
+    <h2>Cztery pytania, które dostajemy najczęściej.</h2>
+    <div class="faq">
+      <details>
+        <summary>Czy można wejść bez polecenia?</summary>
+        <p>Nie. Bez polecenia od członka kręgu nie ma drogi wejścia. To nie wstęp, to filtr.</p>
+      </details>
+      <details>
+        <summary>Czy RobimyTech to agencja?</summary>
+        <p>Nie. RobimyTech to sieć osób, nie firma świadcząca usługi. Nie zatrudniamy, nie podnajmujemy, nie fakturujemy w imieniu członków. Każdy projekt to bezpośredni kontrakt klienta z wykonawcą.</p>
+      </details>
+      <details>
+        <summary>Czy bierzecie prowizję od zleceń?</summary>
+        <p>Nie. Krąg nie pobiera prowizji od projektów przekazywanych między członkami ani od zleceń kierowanych z zewnątrz.</p>
+      </details>
+      <details>
+        <summary>Czy klient może zgłosić projekt bez znajomości z kręgu?</summary>
+        <p>Tak. Opisz potrzebę przez <a href="#zlecenie" style="color: var(--accent);">formularz zlecenia</a>. Krąg wskaże pasujące osoby. Rekomendacja jest podpisana reputacją członka.</p>
+      </details>
     </div>
   </div>
 </section>
 
-<section class="block" id="apply">
+<section class="block" id="zgloszenie">
   <div class="container-narrow">
-    <div class="section-label">Zgłoszenie</div>
-    <h2>Powiedz, kto Cię poleca.</h2>
-    <div class="apply-wrap">
-      <h3>Aplikuj do kręgu</h3>
-      <p>Bez polecenia od członka kręgu nie ma sensu wysyłać formularza. Powiedz, kto Cię poleca, pokaż jeden link do swojej roboty i napisz jednym zdaniem, czemu chcesz wejść.</p>
-      <form id="apply-form" action="https://formsubmit.co/pz@xfaang.com" method="POST">
-        <input type="hidden" name="_subject" value="RobimyTech — nowe zgłoszenie">
+    <div class="section-label">Zgłoszenie z polecenia</div>
+    <h2>Powiedz, kto Cię <em>poleca</em>.</h2>
+    <div class="form-wrap">
+      <h3>Zgłoszenie z polecenia</h3>
+      <p>Masz osobę z kręgu, która ręczy za Twoją pracę? Podaj kto Cię poleca, pokaż jeden konkretny przykład roboty i napisz, co możesz wnieść do sieci.</p>
+      <form action="https://formsubmit.co/pz@xfaang.com" method="POST">
+        <input type="hidden" name="_subject" value="RobimyTech &mdash; zgłoszenie z polecenia">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://www.robimytech.pl/?thanks=1">
-        <input type="text" name="_honey" style="display:none">
+        <input type="hidden" name="_next" value="https://www.robimytech.pl/?ok=member">
+        <input type="text" name="_honey" class="honey-field">
         <div class="form-row">
           <label for="who">Kto Cię poleca</label>
           <input id="who" name="Polecajacy" type="text" placeholder="Imię i nazwisko osoby z kręgu" required>
-          <div class="form-note">Bez tego nie czytamy. To nie pole.</div>
+          <div class="form-note">Bez tego nie czytamy. To nie pole formalne.</div>
         </div>
         <div class="form-row">
-          <label for="portfolio">Twoje portfolio (jeden link)</label>
+          <label for="portfolio">Twoje portfolio &mdash; jeden link</label>
           <input id="portfolio" name="Portfolio" type="url" placeholder="https://" required>
         </div>
         <div class="form-row">
-          <label for="why">Dlaczego chcesz wejść</label>
-          <textarea id="why" name="Dlaczego" placeholder="Jedno zdanie. Maksymalnie 200 znaków." maxlength="200" required></textarea>
+          <label for="why">Co wnosisz do sieci</label>
+          <textarea id="why" name="CoWnosisz" placeholder="Krótko, konkretnie. Maksymalnie 240 znaków." maxlength="240" required></textarea>
         </div>
         <div class="form-row">
-          <label for="email">Twój email</label>
-          <input id="email" name="email" type="email" placeholder="ty@firma.pl" required>
+          <label for="email-member">Twój email</label>
+          <input id="email-member" name="email" type="email" placeholder="ty@firma.pl" required>
         </div>
         <div class="form-actions">
           <button type="submit" class="btn btn-primary">Wyślij zgłoszenie</button>
-          <span class="submit-meta">Odpowiadamy w 7 dni. Lub nie odpowiadamy w ogóle.</span>
+          <span class="submit-meta">Odpowiadamy w 7 dni albo wcale.</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="zlecenie">
+  <div class="container-narrow">
+    <div class="section-label">Zgłoszenie projektu</div>
+    <h2>Opisz <em>zlecenie</em>.</h2>
+    <div class="form-wrap">
+      <h3>Opisz zlecenie</h3>
+      <p>Powiedz krótko czego potrzebujesz. Krąg wskaże osobę, która podpisze rekomendację reputacją. Nie wysyłamy listy CV, tylko jedną konkretną propozycję.</p>
+      <form action="https://formsubmit.co/pz@xfaang.com" method="POST">
+        <input type="hidden" name="_subject" value="RobimyTech &mdash; zgłoszenie projektu">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://www.robimytech.pl/?ok=client">
+        <input type="text" name="_honey" class="honey-field">
+        <div class="form-row">
+          <label for="company">Firma</label>
+          <input id="company" name="Firma" type="text" placeholder="Nazwa firmy" required>
+        </div>
+        <div class="form-row">
+          <label for="email-client">Email kontaktowy</label>
+          <input id="email-client" name="email" type="email" placeholder="ty@firma.pl" required>
+        </div>
+        <div class="form-row">
+          <label for="project-type">Typ projektu</label>
+          <select id="project-type" name="TypProjektu" required>
+            <option value="">Wybierz typ</option>
+            <option>MVP / prototyp produktu</option>
+            <option>Audyt technologiczny</option>
+            <option>AI automation</option>
+            <option>Integracje API</option>
+            <option>Dev team rescue</option>
+            <option>CTO advisory</option>
+            <option>Performance / SEO / analytics</option>
+            <option>Design system / product design</option>
+            <option>Cloud / DevOps</option>
+            <option>Inne</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="brief">Krótki brief</label>
+          <textarea id="brief" name="Brief" placeholder="Co potrzebujesz, do kiedy, jaki jest realny kontekst. 3-5 zdań wystarczy." required></textarea>
+        </div>
+        <div class="form-row">
+          <label for="budget">Budżet (opcjonalnie)</label>
+          <select id="budget" name="Budzet">
+            <option value="">Wolę nie podawać</option>
+            <option>do 20 000 zł</option>
+            <option>20 000 &ndash; 50 000 zł</option>
+            <option>50 000 &ndash; 150 000 zł</option>
+            <option>150 000 &ndash; 500 000 zł</option>
+            <option>powyżej 500 000 zł</option>
+            <option>projekt długoterminowy / advisory</option>
+          </select>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Wyślij zlecenie</button>
+          <span class="submit-meta">Wracamy z propozycją w 3-7 dni.</span>
         </div>
       </form>
     </div>
@@ -467,9 +746,31 @@
 <footer>
   <div class="container footer-inner">
     <div class="footer-rule"><strong>0 listeners</strong> &middot; <em>Chatham House Rule</em></div>
-    <div class="footer-mark">RobimyTech &copy; 2026 &middot; krąg kreatorów</div>
+    <div class="footer-mark">RobimyTech &copy; 2026 &middot; sieć poleceń tech</div>
   </div>
 </footer>
+
+<script>
+(function(){
+  // Show thank-you banner if ?ok=... in URL after form submit
+  var params = new URLSearchParams(location.search);
+  var ok = params.get('ok');
+  if (ok) {
+    var b = document.createElement('div');
+    b.className = 'thanks';
+    var msg = ok === 'member'
+      ? '<strong>Mamy zgłoszenie.</strong> Jeśli Twój polecający potwierdzi i jeden dowód jakości przekona krąg &mdash; odpowiemy w 7 dni. Inaczej milczymy.'
+      : ok === 'client'
+        ? '<strong>Mamy zlecenie.</strong> Krąg wraca z jedną propozycją w 3-7 dni.'
+        : '<strong>Dziękujemy.</strong>';
+    b.innerHTML = msg;
+    var host = document.querySelector('.hero .container');
+    host.insertBefore(b, host.firstChild);
+    // clean URL without reload
+    history.replaceState({}, '', location.pathname);
+  }
+})();
+</script>
 
 </body>
 </html>
