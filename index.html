@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RobimyTech — krąg kreatorów, tylko z polecenia</title>
+<meta name="description" content="Mała grupa kreatorów techu. Polecamy sobie pracę i ręczymy reputacją. Klient dostaje filtr, członek dostaje zlecenia tylko od osób, którym ufa.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --bg-soft: #111111;
+    --ink: #f5f3ee;
+    --ink-dim: #b8b4a8;
+    --ink-mute: #6b6760;
+    --line: #2a2722;
+    --accent: #b89968;
+    --accent-soft: rgba(184,153,104,0.10);
+    --accent-line: rgba(184,153,104,0.35);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  .container { max-width: 920px; margin: 0 auto; padding: 0 28px; }
+  .container-narrow { max-width: 640px; margin: 0 auto; padding: 0 28px; }
+
+  /* Nav */
+  nav {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .brand {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+  }
+  .brand-mark {
+    color: var(--accent);
+    margin-right: 2px;
+  }
+  .nav-meta {
+    font-size: 12px;
+    color: var(--ink-mute);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* Hero */
+  .hero { padding: 120px 0 100px; }
+  .eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent-line);
+    background: var(--accent-soft);
+    padding: 7px 14px;
+    border-radius: 999px;
+    margin-bottom: 28px;
+  }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(48px, 9vw, 96px);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    margin-bottom: 28px;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .lede {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(20px, 2.4vw, 26px);
+    line-height: 1.45;
+    color: var(--ink-dim);
+    max-width: 560px;
+    margin-bottom: 40px;
+  }
+  .cta-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    transition: all 0.15s ease;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--bg);
+  }
+  .btn-primary:hover {
+    background: #c9a87a;
+    transform: translateY(-1px);
+  }
+  .btn-ghost {
+    color: var(--ink-dim);
+    border: 1px solid var(--line);
+  }
+  .btn-ghost:hover {
+    color: var(--ink);
+    border-color: var(--ink-mute);
+  }
+
+  /* Section base */
+  section.block {
+    padding: 80px 0;
+    border-top: 1px solid var(--line);
+  }
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+  }
+
+  /* Manifest */
+  .manifest p {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(22px, 2.6vw, 30px);
+    line-height: 1.5;
+    color: var(--ink);
+    font-weight: 400;
+  }
+  .manifest p + p { margin-top: 18px; color: var(--ink-dim); }
+
+  /* How it works */
+  .steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 32px;
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 24px;
+    padding: 30px 0;
+    border-bottom: 1px solid var(--line);
+    align-items: start;
+  }
+  .step:last-child { border-bottom: 0; }
+  .step-num {
+    font-family: 'Fraunces', serif;
+    font-size: 38px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .step-head {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .step-body {
+    color: var(--ink-dim);
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 540px;
+  }
+
+  /* Rules */
+  .rules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+  }
+  .rule {
+    border-left: 2px solid var(--accent);
+    padding: 4px 0 4px 20px;
+  }
+  .rule-head {
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .rule-body {
+    color: var(--ink-dim);
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  /* Apply */
+  .apply-wrap {
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 48px 40px;
+    margin-top: 32px;
+  }
+  .apply-wrap h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  .apply-wrap > p {
+    color: var(--ink-dim);
+    font-size: 15px;
+    margin-bottom: 28px;
+    max-width: 480px;
+  }
+  .form-row {
+    margin-bottom: 18px;
+  }
+  .form-row label {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 8px;
+  }
+  .form-row input,
+  .form-row textarea {
+    width: 100%;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 13px 14px;
+    color: var(--ink);
+    font-family: inherit;
+    font-size: 15px;
+    transition: border-color 0.15s ease;
+  }
+  .form-row input:focus,
+  .form-row textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+  .form-row textarea {
+    min-height: 110px;
+    resize: vertical;
+  }
+  .form-note {
+    font-size: 12px;
+    color: var(--ink-mute);
+    margin-top: 6px;
+  }
+  .form-actions {
+    margin-top: 24px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .submit-meta {
+    font-size: 12px;
+    color: var(--ink-mute);
+  }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 56px 0 48px;
+    margin-top: 80px;
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .footer-rule {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink-dim);
+  }
+  .footer-rule strong {
+    color: var(--ink);
+    font-weight: 500;
+    font-style: normal;
+  }
+  .footer-mark {
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--ink-mute);
+  }
+
+  @media (max-width: 640px) {
+    .hero { padding: 80px 0 60px; }
+    section.block { padding: 60px 0; }
+    .apply-wrap { padding: 32px 24px; }
+    .step { grid-template-columns: 56px 1fr; gap: 18px; padding: 24px 0; }
+    .step-num { font-size: 30px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <div class="brand"><span class="brand-mark">&#9679;</span> RobimyTech</div>
+    <div class="nav-meta">Krąg · Members only</div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <span class="eyebrow">Tylko z polecenia</span>
+    <h1>Krąg kreatorów<br>kt&oacute;rzy <em>robią tech</em>.</h1>
+    <p class="lede">Mała grupa, duże zlecenia, twarde standardy. Polecamy sobie pracę i ręczymy reputacją.</p>
+    <div class="cta-row">
+      <a href="#apply" class="btn btn-primary">Zgłoś się &rarr;</a>
+      <a href="#how" class="btn btn-ghost">Jak to działa</a>
+    </div>
+  </div>
+</header>
+
+<section class="block">
+  <div class="container-narrow manifest">
+    <div class="section-label">Manifest</div>
+    <h2>Klient dostaje filtr.<br>Członek dostaje zlecenia od osób, którym ufa.</h2>
+    <p>Nikt z nas nie poleci kogoś, kto dostarcza śmieci. Stawiamy reputację za każdym poleceniem.</p>
+    <p>To nie jest community do networkingu. To jest filtr na klientów i filtr na wykonawców.</p>
+  </div>
+</section>
+
+<section class="block" id="how">
+  <div class="container">
+    <div class="section-label">Jak to działa</div>
+    <h2>Cztery kroki, jedna zasada: <em style="font-family: 'Fraunces', serif; font-style: italic; color: var(--accent);">zawsze ręczysz</em>.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div>
+          <div class="step-head">Zaproszenie</div>
+          <div class="step-body">Maksymalnie 50 osób w kręgu. Wchodzisz tylko jeśli ktoś z wewnątrz Cię poleci. Bez Apply Now, bez Join us, bez self-signup.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div>
+          <div class="step-head">Vouching</div>
+          <div class="step-body">Potrzebujesz dwóch poręczycieli z kręgu. Każdy z nich stawia swoją reputację za to, że dostarczasz robotę.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div>
+          <div class="step-head">Delivery</div>
+          <div class="step-body">Polecasz zlecenia. Bierzesz zlecenia. Płacisz za dobrą robotę. Każda transakcja przechodzi przez sieć vouchów, każdy widzi historię.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div>
+          <div class="step-head">Exit</div>
+          <div class="step-body">Jedna potwierdzona skarga na dostarczanie śmieci, ujawnienie poufnej rozmowy albo oszustwo &mdash; wylatujesz. Bez głosowania, bez procesu sądowego.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <div class="section-label">Zasady</div>
+    <h2>Krótko i twardo.</h2>
+    <div class="rules-grid">
+      <div class="rule">
+        <div class="rule-head">0 listeners</div>
+        <div class="rule-body">Nikt z zewnątrz nie nagrywa, nie streamuje, nie zapisuje. Nasze rozmowy zostają w kręgu.</div>
+      </div>
+      <div class="rule">
+        <div class="rule-head">Chatham House Rule</div>
+        <div class="rule-body">Treść spotkań możesz wynieść. Imion mówcom nie przypisujesz.</div>
+      </div>
+      <div class="rule">
+        <div class="rule-head">Aktywność</div>
+        <div class="rule-body">Sześć miesięcy bez polecenia, wzięcia zlecenia albo wniesienia zasobu, wylatujesz na ławkę.</div>
+      </div>
+      <div class="rule">
+        <div class="rule-head">Anonimowe skargi</div>
+        <div class="rule-body">Skargi rozpatruje rotacyjny komitet pięciu osób. Decyzja final.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="apply">
+  <div class="container-narrow">
+    <div class="section-label">Zgłoszenie</div>
+    <h2>Powiedz, kto Cię poleca.</h2>
+    <div class="apply-wrap">
+      <h3>Aplikuj do kręgu</h3>
+      <p>Bez polecenia od członka kręgu nie ma sensu wysyłać formularza. Powiedz, kto Cię poleca, pokaż jeden link do swojej roboty i napisz jednym zdaniem, czemu chcesz wejść.</p>
+      <form id="apply-form" action="mailto:pz@xfaang.com?cc=xf@xfaang.com&subject=RobimyTech%20-%20zgloszenie" method="post" enctype="text/plain">
+        <div class="form-row">
+          <label for="who">Kto Cię poleca</label>
+          <input id="who" name="Polecajacy" type="text" placeholder="Imię i nazwisko osoby z kręgu" required>
+          <div class="form-note">Bez tego nie czytamy. To nie pole.</div>
+        </div>
+        <div class="form-row">
+          <label for="portfolio">Twoje portfolio (jeden link)</label>
+          <input id="portfolio" name="Portfolio" type="url" placeholder="https://" required>
+        </div>
+        <div class="form-row">
+          <label for="why">Dlaczego chcesz wejść</label>
+          <textarea id="why" name="Dlaczego" placeholder="Jedno zdanie. Maksymalnie 200 znaków." maxlength="200" required></textarea>
+        </div>
+        <div class="form-row">
+          <label for="email">Twój email</label>
+          <input id="email" name="Email" type="email" placeholder="ty@firma.pl" required>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Wyślij zgłoszenie</button>
+          <span class="submit-meta">Odpowiadamy w 7 dni. Lub nie odpowiadamy w ogóle.</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-rule"><strong>0 listeners</strong> &middot; <em>Chatham House Rule</em></div>
+    <div class="footer-mark">RobimyTech &copy; 2026 &middot; krąg kreatorów</div>
+  </div>
+</footer>
+
+</body>
+</html>
