@@ -432,7 +432,12 @@
     <div class="apply-wrap">
       <h3>Aplikuj do kręgu</h3>
       <p>Bez polecenia od członka kręgu nie ma sensu wysyłać formularza. Powiedz, kto Cię poleca, pokaż jeden link do swojej roboty i napisz jednym zdaniem, czemu chcesz wejść.</p>
-      <form id="apply-form" action="mailto:pz@xfaang.com?cc=xf@xfaang.com&subject=RobimyTech%20-%20zgloszenie" method="post" enctype="text/plain">
+      <form id="apply-form" action="https://formsubmit.co/pz@xfaang.com" method="POST">
+        <input type="hidden" name="_subject" value="RobimyTech — nowe zgłoszenie">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://www.robimytech.pl/?thanks=1">
+        <input type="text" name="_honey" style="display:none">
         <div class="form-row">
           <label for="who">Kto Cię poleca</label>
           <input id="who" name="Polecajacy" type="text" placeholder="Imię i nazwisko osoby z kręgu" required>
@@ -448,7 +453,7 @@
         </div>
         <div class="form-row">
           <label for="email">Twój email</label>
-          <input id="email" name="Email" type="email" placeholder="ty@firma.pl" required>
+          <input id="email" name="email" type="email" placeholder="ty@firma.pl" required>
         </div>
         <div class="form-actions">
           <button type="submit" class="btn btn-primary">Wyślij zgłoszenie</button>
