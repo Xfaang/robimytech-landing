@@ -155,7 +155,7 @@
   /* Hero image */
   .hero-image-wrap {
     position: relative;
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 4 / 5;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 30px 80px -20px rgba(0,0,0,0.6), 0 0 0 1px var(--line);
@@ -164,12 +164,13 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: 60% center;
     display: block;
   }
   .hero-image-wrap::after {
     content: '';
     position: absolute; inset: 0;
-    background: linear-gradient(135deg, rgba(14,13,11,0.55) 0%, rgba(14,13,11,0) 35%, rgba(14,13,11,0.25) 100%);
+    background: linear-gradient(135deg, rgba(14,13,11,0.40) 0%, rgba(14,13,11,0) 35%, rgba(14,13,11,0.25) 100%);
     pointer-events: none;
   }
   .hero-caption {
@@ -594,7 +595,7 @@
       </div>
       <div>
         <div class="hero-image-wrap">
-          <img src="/hero.jpg" alt="Mały marmurowy stolik w klimacie Kawiarni Szkockiej: notatnik, herbata, ciepłe światło" loading="eager">
+          <img src="/cafe.jpg" alt="Trzech ludzi przy marmurowym stoliku w przedwojennej kawiarni, otwarty notatnik z formułami, rozmowa nad herbatą" loading="eager">
         </div>
         <div class="hero-caption">Mały stolik. Trudne problemy. Zaufani ludzie. Reputacja jako zapis jakości.</div>
       </div>
@@ -694,13 +695,6 @@
     </div>
   </div>
 </section>
-
-<div class="cafe-band" aria-label="Kawiarnia Szkocka — inspiracja">
-  <img src="/cafe.jpg" alt="Trzech ludzi w garniturach przy marmurowym stoliku w przedwojennej kawiarni, otwarty notatnik z formułami, rozmowa nad herbatą.">
-  <div class="cafe-caption">
-    <p>Inspiracja: <strong>Kawiarnia Szkocka</strong> &middot; Lwów, lata 30-te. Mały stolik, trudne problemy, zaufani ludzie.</p>
-  </div>
-</div>
 
 <section class="block">
   <div class="container">
