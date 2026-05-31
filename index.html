@@ -18,6 +18,8 @@
 <meta name="twitter:title" content="RobimyTech &mdash; zaufana sieć ludzi, którzy dowożą tech">
 <meta name="twitter:description" content="Mały krąg sprawdzonych wykonawców. Duże zlecenia. Reputacja za każdą rekomendacją.">
 <meta name="twitter:image" content="https://www.robimytech.pl/og.png">
+<link rel="icon" type="image/png" href="/logo.png">
+<link rel="apple-touch-icon" href="/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -62,6 +64,9 @@
   }
   .nav-inner { display: flex; align-items: center; justify-content: space-between; }
   .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     font-family: var(--font-display);
     font-weight: 400;
     font-size: 22px;
@@ -69,7 +74,11 @@
     text-decoration: none;
     color: var(--ink);
   }
-  .brand-mark { color: var(--gold); margin-right: 6px; font-size: 14px; vertical-align: middle; }
+  .brand img {
+    width: 32px;
+    height: 32px;
+    display: block;
+  }
   .nav-meta {
     font-size: 11px;
     color: var(--ink-mute);
@@ -563,12 +572,22 @@
     .hero-caption { max-width: 480px; margin-left: auto; margin-right: auto; text-align: center; }
   }
   @media (max-width: 720px) {
-    .hero { padding: 60px 0 70px; }
+    .container, .container-narrow { padding: 0 22px; }
+    .hero { padding: 56px 0 72px; }
     section.block { padding: 64px 0; }
     .form-wrap, .client-box { padding: 30px 22px; }
     .audience-grid, .process-grid { grid-template-columns: 1fr; gap: 24px; }
     .process-col { padding: 28px 24px; }
     .standard-line { font-size: 22px; padding: 18px 0; }
+    .cta-row { flex-direction: column; align-items: stretch; gap: 12px; }
+    .cta-row .btn { justify-content: center; padding: 16px 22px; width: 100%; }
+    .nav-meta { display: none; }
+    footer { padding: 44px 0 40px; }
+    .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+  }
+  @media (max-width: 420px) {
+    h1 { font-size: clamp(46px, 13vw, 64px); }
+    h2 { font-size: clamp(30px, 9vw, 40px); }
   }
 </style>
 </head>
@@ -576,7 +595,7 @@
 
 <nav>
   <div class="container nav-inner">
-    <a class="brand" href="/"><span class="brand-mark">&#9679;</span>RobimyTech</a>
+    <a class="brand" href="/"><img src="/logo.png" alt="">RobimyTech</a>
     <div class="nav-meta">krąg &middot; tylko z polecenia</div>
   </div>
 </nav>
@@ -720,8 +739,8 @@
         <div class="rule-body">Nikt z zewnątrz nie nagrywa, nie streamuje, nie zapisuje. Rozmowy zostają w kręgu.</div>
       </div>
       <div class="rule">
-        <div class="rule-head">Chatham House Rule</div>
-        <div class="rule-body">Treść spotkań możesz wynieść. Imion mówcom nie przypisujesz.</div>
+        <div class="rule-head"><a href="https://www.chathamhouse.org/about-us/chatham-house-rule" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none; border-bottom: 1px dotted var(--gold-line);">Chatham House Rule</a></div>
+        <div class="rule-body">Treść spotkań możesz wynieść. Imion mówcom nie przypisujesz. <a href="https://www.chathamhouse.org/about-us/chatham-house-rule" target="_blank" rel="noopener noreferrer" style="color: var(--gold); text-decoration: none;">Czytaj oryginał &rarr;</a></div>
       </div>
       <div class="rule">
         <div class="rule-head">Aktywność</div>
@@ -869,7 +888,7 @@
 
 <footer>
   <div class="container footer-inner">
-    <div class="footer-rule"><strong>0 listeners</strong> &middot; <em>Chatham House Rule</em></div>
+    <div class="footer-rule"><strong>0 listeners</strong> &middot; <a href="https://www.chathamhouse.org/about-us/chatham-house-rule" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none; border-bottom: 1px dotted var(--gold-line);"><em>Chatham House Rule</em></a></div>
     <div class="footer-mark">RobimyTech &copy; 2026 &middot; sieć poleceń tech</div>
   </div>
 </footer>
