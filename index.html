@@ -314,6 +314,58 @@
     font-style: italic;
   }
 
+  /* Cafe band (full-bleed) */
+  .cafe-band {
+    position: relative;
+    margin-top: 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+    background: var(--bg-deep);
+  }
+  .cafe-band img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 560px;
+    object-fit: cover;
+    opacity: 0.92;
+  }
+  .cafe-band::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(14,13,11,0.25) 0%, rgba(14,13,11,0) 30%, rgba(14,13,11,0) 70%, rgba(14,13,11,0.65) 100%);
+    pointer-events: none;
+  }
+  .cafe-caption {
+    position: absolute;
+    left: 0; right: 0; bottom: 28px;
+    text-align: center;
+    z-index: 2;
+    padding: 0 28px;
+  }
+  .cafe-caption p {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(16px, 1.8vw, 20px);
+    color: var(--ink);
+    background: rgba(14,13,11,0.55);
+    padding: 10px 18px;
+    border-radius: 999px;
+    backdrop-filter: blur(8px);
+    line-height: 1.5;
+  }
+  .cafe-caption p strong {
+    color: var(--gold);
+    font-weight: 400;
+    font-style: normal;
+  }
+  @media (max-width: 720px) {
+    .cafe-band img { max-height: 360px; }
+    .cafe-caption { bottom: 16px; }
+  }
+
   /* Standard */
   .standard { margin-top: 36px; }
   .standard-line {
@@ -642,6 +694,13 @@
     </div>
   </div>
 </section>
+
+<div class="cafe-band" aria-label="Kawiarnia Szkocka — inspiracja">
+  <img src="/cafe.jpg" alt="Trzech ludzi w garniturach przy marmurowym stoliku w przedwojennej kawiarni, otwarty notatnik z formułami, rozmowa nad herbatą.">
+  <div class="cafe-caption">
+    <p>Inspiracja: <strong>Kawiarnia Szkocka</strong> &middot; Lwów, lata 30-te. Mały stolik, trudne problemy, zaufani ludzie.</p>
+  </div>
+</div>
 
 <section class="block">
   <div class="container">
