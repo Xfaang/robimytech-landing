@@ -53,7 +53,7 @@
   }
   a { color: inherit; }
   .container { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
-  .container-narrow { max-width: 720px; margin: 0 auto; padding: 0 28px; }
+  .narrow { max-width: 720px; }
 
   /* Nav */
   nav {
@@ -211,6 +211,7 @@
   }
 
   /* Zasada */
+  .principle { max-width: 760px; }
   .principle p {
     font-family: var(--font-display);
     font-size: clamp(22px, 2.6vw, 30px);
@@ -424,7 +425,8 @@
   }
 
   /* FAQ */
-  .faq { margin-top: 28px; }
+  .faq { margin-top: 28px; max-width: 720px; }
+  .faq-section h2 { max-width: 720px; }
   details {
     border-top: 1px solid var(--line);
     padding: 20px 0;
@@ -462,12 +464,14 @@
   }
 
   /* Form */
+  .form-section h2 { max-width: 720px; }
   .form-wrap {
     background: var(--bg-soft);
     border: 1px solid var(--line);
     border-radius: 16px;
     padding: 44px 40px;
     margin-top: 28px;
+    max-width: 720px;
   }
   .form-wrap h3 {
     font-family: var(--font-display);
@@ -566,7 +570,7 @@
     .hero-image-wrap { aspect-ratio: 16 / 10; margin-top: 44px; }
   }
   @media (max-width: 720px) {
-    .container, .container-narrow { padding: 0 22px; }
+    .container { padding: 0 22px; }
     .hero { padding: 36px 0 60px; }
     .hero-image-wrap { aspect-ratio: 4 / 3; margin-top: 36px; }
     section.block { padding: 64px 0; }
@@ -614,11 +618,13 @@
 </header>
 
 <section class="block">
-  <div class="container-narrow principle">
-    <div class="section-label">Zasada działania</div>
-    <h2>Klient dostaje filtr. Członek dostaje zlecenia od osób, którym ufa.</h2>
-    <p>Nikt z nas nie poleca osoby, za której pracę nie chce wziąć reputacyjnej odpowiedzialności.</p>
-    <p>To nie jest community do networkingu. To prywatna sieć zaufania dla ludzi, którzy realnie dowożą technologię.</p>
+  <div class="container">
+    <div class="principle">
+      <div class="section-label">Zasada działania</div>
+      <h2>Klient dostaje filtr. Członek dostaje zlecenia od osób, którym ufa.</h2>
+      <p>Nikt z nas nie poleca osoby, za której pracę nie chce wziąć reputacyjnej odpowiedzialności.</p>
+      <p>To nie jest community do networkingu. To prywatna sieć zaufania dla ludzi, którzy realnie dowożą technologię.</p>
+    </div>
   </div>
 </section>
 
@@ -748,8 +754,8 @@
   </div>
 </section>
 
-<section class="block">
-  <div class="container-narrow">
+<section class="block faq-section">
+  <div class="container">
     <div class="section-label">FAQ</div>
     <h2>Cztery pytania, które dostajemy najczęściej.</h2>
     <div class="faq">
@@ -773,8 +779,8 @@
   </div>
 </section>
 
-<section class="block" id="zgloszenie">
-  <div class="container-narrow">
+<section class="block form-section" id="zgloszenie">
+  <div class="container">
     <div class="section-label">Zgłoszenie z polecenia</div>
     <h2>Powiedz, kto za Ciebie <em>ręczy</em>.</h2>
     <div class="form-wrap">
@@ -812,8 +818,8 @@
   </div>
 </section>
 
-<section class="block" id="zlecenie">
-  <div class="container-narrow">
+<section class="block form-section" id="zlecenie">
+  <div class="container">
     <div class="section-label">Zgłoszenie projektu</div>
     <h2>Opisz <em>zlecenie</em>.</h2>
     <div class="form-wrap">
